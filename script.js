@@ -30,7 +30,7 @@ async function getQuote() {
     loading();
     const response = await fetch(apiUrl);
     const data = await response.json();
-    complete();
+
     let rand = Math.floor(Math.random() * 1643);
 
     if (data[rand].author == null) {
@@ -49,6 +49,8 @@ async function getQuote() {
   } catch (error) {
     console.log("whoops, no quote", error);
   }
+
+  complete();
 }
 
 function tweetQuote() {
